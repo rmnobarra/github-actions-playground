@@ -7,6 +7,8 @@ jobs:
   print-a-text:
     runs-on: ubuntu-latest
     name: Print a text job
-    uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
-    with:
-      input-text: "Hello, World!"
+    steps:
+      - name: Print a text job
+        uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
+        with:
+          input_text: "Hello, World!"
