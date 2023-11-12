@@ -9,9 +9,7 @@ on:
 jobs:
   show-input-text:
     runs-on: ubuntu-latest
-
     steps:      
-
       - name: Print text
         id: print-text
         run: |
