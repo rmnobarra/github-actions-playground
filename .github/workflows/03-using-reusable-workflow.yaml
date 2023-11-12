@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Print some text and send to env step
         id: set_hash
-        run: echo "HASH=$(head -c 12 /dev/urandom | base64)" >> $GITHUB_ENV
+        run: echo "HASH=$(head -c 12 /dev/urandom | base64)" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Print some text and send to env step inside the same job
