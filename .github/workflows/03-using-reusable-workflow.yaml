@@ -22,7 +22,7 @@ jobs:
 
       - name: Print some text and send to env step inside the same job
         run: echo $hash_output
-        shell: bash
+        shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
 
   print-some-text-outside-of-the-job:
     runs-on: ubuntu-latest
