@@ -13,4 +13,4 @@ jobs:
       - name: Print text
         id: print-text
         run: |
-        echo "text provide was: ${{ inputs.input-text }}" 
+          echo "text provide was: ${{ inputs.input-text }}"
