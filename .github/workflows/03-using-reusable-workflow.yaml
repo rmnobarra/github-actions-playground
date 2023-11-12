@@ -18,11 +18,11 @@ jobs:
       - name: Print some text and send to env step
         id: set_hash
         run: echo "hash_output=$(head -c 12 /dev/urandom | base64)" >> "$GITHUB_OUTPUT"
-        shell: /usr/bin/bash
+        shell: bash
 
       - name: Print some text and send to env step inside the same job
         run: echo $hash_output
-        shell: /usr/bin/bash
+        shell: bash
 
   print-some-text-outside-of-the-job:
     runs-on: ubuntu-latest
@@ -31,4 +31,4 @@ jobs:
     steps:
       - name: Print HASH value from previous job
         run: echo "The HASH value is ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
-        shell: /usr/bin/bash
+        shell: bash
