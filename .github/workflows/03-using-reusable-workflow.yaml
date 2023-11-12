@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Print a text
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
       - name: Call Reusable Workflow
         uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
         with:
