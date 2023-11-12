@@ -1,0 +1,14 @@
+# This is a basic workflow to showcase the use of Reusable Workflows
+
+name: Reusable Workflow user
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  print:
+    runs-on: ubuntu-latest
+    uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
+    with:
+      input-text: hi
