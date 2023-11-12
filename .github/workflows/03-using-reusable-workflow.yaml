@@ -17,7 +17,7 @@ jobs:
 
       - name: Print hash
         run: echo $hash_output
-        shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+        shell: bash
 
   print-some-text-outside-of-the-job:
     runs-on: ubuntu-latest
