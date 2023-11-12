@@ -1,8 +1,8 @@
-name: Print a text
+name: Print a text Reusable
 on:
   workflow_call:
     inputs:
-      input_text:
+      input-text:
         required: true
         type: string
 
@@ -15,4 +15,4 @@ jobs:
       - name: Print text
         id: print-text
         run: |
-        echo "text provide was: ${{ inputs.input_text }}" 
+        echo "text provide was: ${{ inputs.input-text }}" 
