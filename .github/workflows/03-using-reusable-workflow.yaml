@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-reusable-workflow:
+  print-a-text:
     runs-on: ubuntu-latest
     name: Print a text
     steps:
