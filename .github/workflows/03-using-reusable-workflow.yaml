@@ -16,8 +16,8 @@ jobs:
         shell: bash
 
       - name: Print hash
-        run: echo $hash_output
-        shell: "/usr/bin/bash --noprofile --norc -e -o pipefail {0}"
+        run: echo "${{ steps.set_hash.outputs.hash_output }}"
+        shell: bash
 
   print-some-text-outside-of-the-job:
     runs-on: ubuntu-latest
