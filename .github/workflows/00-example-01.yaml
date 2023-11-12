@@ -1,6 +1,6 @@
 name: github actions playground - Example 01
 run-name: ${{ github.actor }} Github Actions Playground
-on: [push]
+#on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest

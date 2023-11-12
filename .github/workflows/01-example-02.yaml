@@ -1,9 +1,9 @@
 name: Linux Commands Example Workflow
 
 on:
-  push:
-    branches:
-      - main  # Substitua pelo nome da branch que deseja usar.
+  #push:
+  #  branches:
+  #    - main  # Substitua pelo nome da branch que deseja usar.
   workflow_dispatch:  # Permite que você execute o workflow manualmente
 
 jobs:
