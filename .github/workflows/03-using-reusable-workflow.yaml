@@ -1,14 +1,9 @@
-name: Print a text workflow
+name: Generate and print hash
 
 on:
   workflow_dispatch:
 
 jobs:
-  #print-text:
-  #  uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
-  #  with:
-  #    input-text: "Hello there"
-
   print-some-text-and-send-to-env:
     runs-on: ubuntu-latest
     name: Generates and prints hash and send to env
