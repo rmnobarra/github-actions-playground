@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  print-text:
-    uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
-    with:
-      input-text: "Hello there"
+  #print-text:
+  #  uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
+  #  with:
+  #    input-text: "Hello there"
 
   print-some-text-and-send-to-env:
     runs-on: ubuntu-latest
