@@ -1,4 +1,4 @@
-name: Print a text
+name: Print a text workflow
 
 on:
   workflow_dispatch:
@@ -6,9 +6,9 @@ on:
 jobs:
   print-a-text:
     runs-on: ubuntu-latest
-    name: Print a text
+    name: Print a text job
     steps:
-      - name: Call Reusable Workflow
+      - name: Print a text step
         uses: rmnobarra/github-actions-playground/.github/workflows/02-reusable-workflow.yaml@main
         with:
-          input_text: "Hello, World!"
+          input-text: "Hello, World!"
