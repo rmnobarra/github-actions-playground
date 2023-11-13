@@ -16,7 +16,7 @@ jobs:
         shell: bash
 
       - name: Print hash
-        run: echo "${{ steps.set_hash.outputs.hash_output }}"
+        run: echo $hash_output
         shell: bash
 
   print-some-text-outside-of-the-job:
