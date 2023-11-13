@@ -34,7 +34,7 @@ jobs:
         #shell: bash        
 
       - name: Print hash using outputs
-        run: echo "text is ${{ steps.copy-to-env.outputs.some_text }}
+        run: echo "text is ${{ steps.copy-to-env.outputs.some_text }}"
         #shell: bash  
 
 
