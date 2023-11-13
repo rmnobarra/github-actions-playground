@@ -26,7 +26,16 @@ jobs:
 
       - name: Print hash using env
         run: echo "text is ${some_text}"
-        #shell: bash
+        #shell: bash        
+
+      - name: Copy env to outputs
+        id: copy-to-env
+        run: echo "some_text=${some_text}" >> $GITHUB_OUTPUT
+        #shell: bash        
+
+      - name: Print hash using outputs
+        run: echo "text is ${{ steps.copy-to-env.outputs.some_text }}
+        #shell: bash  
 
 
   print-some-text-outside-of-the-job:
