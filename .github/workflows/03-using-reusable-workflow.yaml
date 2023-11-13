@@ -24,6 +24,13 @@ jobs:
     needs: print-some-text-and-send-to-env
     name: Print hash outside of the job
     steps:
-      - name: Print HASH value from previous job
+      - name: Print HASH value from previous job V1
         run: echo "The HASH value is ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
         shell: bash
+
+      - name: Print HASH value from previous job V2
+        env:
+          HASH: ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
+        run: echo "The HASH value is $HASH
+        shell: bash
+  
