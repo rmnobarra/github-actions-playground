@@ -31,6 +31,6 @@ jobs:
       - name: Print HASH value from previous job V2
         env:
           HASH: ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
-        run: echo "The HASH value is $HASH
+        run: echo "The HASH value is $HASH"
         shell: bash
   
