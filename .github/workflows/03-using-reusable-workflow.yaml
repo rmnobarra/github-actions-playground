@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Generate hash
         id: set_hash
-        run: echo "hash_output=$(head -c 12 /dev/urandom | base64)" >> $GITHUB_OUTPUT
+        run: echo "hash_output=$(head -c 12 /dev/urandom | base64)" >> $GITHUB_ENV
         shell: bash
 
       - name: Print hash
