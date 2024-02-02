@@ -16,11 +16,11 @@ runs:
     - name: List files in the repository
       run: |
         ls -la ${{ inputs.PATH_TO_MOUNT }}
-      shell: /usr/bin/bash --noprofile --norc -e -o pipefail
+      shell: bash
       
     - name: Executar contêiner Docker
       run: docker run -v ${{ inputs.PATH_TO_MOUNT }}:/workspace alpine /bin/sh -c "pwd; ls -la /workspace"
-      shell: /usr/bin/bash --noprofile --norc -e -o pipefail
+      shell: bash
 
 branding:
     icon: 'terminal'
