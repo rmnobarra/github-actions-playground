@@ -1,0 +1,17 @@
+name: Usar Docker Mount Workspace Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Docker Mount Workspace Action
+        uses: ../actions/00-mount/action.yaml

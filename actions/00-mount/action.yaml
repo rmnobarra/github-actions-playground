@@ -1,0 +1,22 @@
+name: Docker Mount Workspace
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-docker@v1
+
+      - name: Mount workspace
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace alpine /bin/sh -c "pwd; ls -la /workspace"
+
+
