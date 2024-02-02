@@ -16,6 +16,7 @@ runs:
     - name: List files in the repository
       run: |
         ls -la ${{ inputs.PATH_TO_MOUNT }}
+      shell: bash
       
     - name: Executar contêiner Docker
       run: docker run -v ${{ inputs.PATH_TO_MOUNT }}:/workspace alpine /bin/bash -c "pwd; ls -la /workspace"
