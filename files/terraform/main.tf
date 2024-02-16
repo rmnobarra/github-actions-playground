@@ -2,7 +2,7 @@ resource "local_file" "github_actions_info" {
   filename = "${path.module}/github_actions_info.txt"
   content = <<-EOT
     Repository: ${var.github_repository}
-    Repository_id: ${var.github_repository_id}
+    Repository_id: ${var.github_repo_id}
     Branch: ${var.github_branch}
     Actor: ${var.github_actor}
   EOT
@@ -13,7 +13,7 @@ variable "github_repository" {
   type        = string
 }
 
-variable "github_repository_id" {
+variable "github_repo_id" {
     description = "The ID of the GitHub repository"
     type        = string
 }
