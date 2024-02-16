@@ -1,0 +1,27 @@
+name: Terraform GitHub Actions Example
+
+on: [push]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.0.0
+      
+    - name: Terraform Init
+      working-directory: ./files/terraform
+      run: terraform init
+
+    - name: Terraform Apply
+      working-directory: ./files/terraform
+      run: |
+        terraform apply -auto-approve \
+          -var="github_repository=${{ github.repository }}" \
+          -var="github_branch=${{ github.ref_name }}" \
+          -var="github_actor=${{ github.actor }}"
