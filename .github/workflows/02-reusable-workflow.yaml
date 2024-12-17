@@ -1,4 +1,5 @@
 name: "02 - Reusable Workflow Example"
+
 on:
   workflow_call:  # Permite que o workflow seja reutilizável
     inputs:  # Define os inputs que podem ser passados para o workflow
@@ -25,4 +26,4 @@ jobs:
 
       - name: List Files in the Repository
         run: ls -la
-        shell: bash
+
