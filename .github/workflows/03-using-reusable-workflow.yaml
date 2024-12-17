@@ -1,55 +1,13 @@
-name: 03 - Generate and print hash
-
+name: "03 - Main Workflow Using Reusable Workflow"
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  print-some-text-and-send-to-env:
-    runs-on: ubuntu-latest
-    name: Generates and prints hash and send to env
-    outputs:
-      hash_value: ${{ steps.set_hash.outputs.hash_output }}
-    steps:
-      - name: Generate hash
-        id: set_hash
-        run: echo "hash_output=$(head -c 12 /dev/urandom | base64)" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Print hash
-        run: "echo hash is ${{ steps.set_hash.outputs.hash_output }}"
-        shell: bash
-
-      - name: Print
-        id: print
-        run: echo "some_text=macacomolhado" >> $GITHUB_ENV
-        #shell: bash
-
-      - name: Print hash using env
-        run: echo "text is ${some_text}"
-        #shell: bash        
-
-      - name: Copy env to outputs
-        id: copy-to-env
-        run: echo "some_text=${some_text}" >> $GITHUB_OUTPUT
-        #shell: bash        
-
-      - name: Print hash using outputs
-        run: echo "text is ${{ steps.copy-to-env.outputs.some_text }}"
-        #shell: bash  
-
-
-  print-some-text-outside-of-the-job:
-    runs-on: ubuntu-latest
-    needs: print-some-text-and-send-to-env
-    name: Print hash outside of the job
-    steps:
-      - name: Print HASH value from previous job V1
-        run: echo "The HASH value is ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
-        shell: bash
-
-      - name: Print HASH value from previous job V2
-        env:
-          HASH: ${{ needs.print-some-text-and-send-to-env.outputs.hash_value }}"
-        run: echo "The HASH value is $HASH"
-        shell: bash
-
+  call-reusable:
+    name: "Call Reusable Workflow"
+    uses: ./.github/workflows/reusable-workflow.yaml  # Referência ao reusable workflow
+    with:
+      MESSAGE: "Hello from the Main Workflow! 🚀"
+      RUNNER: "ubuntu-latest"

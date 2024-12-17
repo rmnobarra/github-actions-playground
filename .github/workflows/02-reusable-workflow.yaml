@@ -1,16 +1,27 @@
-name: 02 - Print a text Reusable
+name: "02 - Reusable Workflow Example"
 on:
-  workflow_call:
-    inputs:
-      input-text:
+  workflow_call:  # Permite que o workflow seja reutilizável
+    inputs:  # Define os inputs que podem ser passados para o workflow
+      MESSAGE:
+        description: "Message to display"
         required: true
+        type: string
+      RUNNER:
+        description: "Runner to execute the job"
+        required: false
+        default: "ubuntu-latest"
         type: string
 
 jobs:
-  show-input-text:
-    runs-on: ubuntu-latest
-    steps:      
-      - name: Print text
-        id: print-text
-        run: |
-          echo "text provide was: ${{ inputs.input-text }}"
+  display-message:
+    name: "Display Message Job"
+    runs-on: ${{ inputs.RUNNER }}  # Permite configurar o runner via input
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Display Input Message
+        run: echo "📝 Message: ${{ inputs.MESSAGE }}"
+
+      - name: List Files in the Repository
+        run: ls -la
