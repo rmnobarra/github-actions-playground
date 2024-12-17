@@ -59,6 +59,12 @@ This repository serves as a comprehensive demonstration of various GitHub Action
 - Demonstrates @actions/core usage
 - Handles inputs and outputs
 
+### 11. Secrets and Variables (10-secrets-and-variables.yaml)
+- Shows how to use GitHub Actions secrets
+- Demonstrates variables usage
+- Implements secure secret masking
+- Proper handling of sensitive information
+
 ## 🛠️ Additional Components
 
 ### YAML to JSON Converter
@@ -95,5 +101,3 @@ Each workflow file is documented with comments explaining its purpose and functi
 - Docker integration
 - Terraform automation
 - Custom action creation
-
-
