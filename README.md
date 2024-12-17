@@ -10,36 +10,54 @@ This repository serves as a comprehensive demonstration of various GitHub Action
 - Runs linting with flake8
 - Executes pytest for testing
 
-### 2. Reusable Workflows (02-using-reusable-workflow.yaml)
+### 2. Linux Commands (01-linux-commands.yaml)
+- Demonstrates basic Linux command execution
+- Shows environment information
+- Lists files and directories
+- Displays environment variables
+
+### 3. Reusable Workflows (02-using-reusable-workflow.yaml)
 - Demonstrates how to create and use reusable workflows
 - Accepts customizable inputs (message and runner type)
 - Shows proper workflow inheritance and reuse patterns
 
-### 3. Docker Volume Mounting (03-mount-volume.yaml)
+### 4. Docker Volume Mounting (03-mount-volume.yaml)
 - Shows how to mount GitHub workspace in Docker containers
 - Demonstrates file generation and access within containers
 - Basic Docker integration in GitHub Actions
 
-### 4. Custom Docker Action (04-mount-using-action.yaml)
+### 5. Custom Docker Action (04-mount-using-action.yaml)
 - Custom action for Docker volume mounting
 - Packaged as a reusable component
 - Includes proper action metadata and branding
 
-### 5. Terraform Integration (05-terraform.yaml)
+### 6. Terraform Integration (05-terraform.yaml)
 - Demonstrates Terraform automation in GitHub Actions
 - Initializes and applies Terraform configurations
 - Uses GitHub context variables in Terraform
 - Generates dynamic files based on repository information
 
-### 6. Composite Action (06-composite-action.yaml)
+### 7. Composite Action (06-composite-action.yaml)
 - Shows how to create and use composite actions
 - Demonstrates input/output handling
 - Includes shell script execution within composite actions
 
-### 7. Matrix Strategy (07-matrix-example.yaml)
+### 8. Matrix Strategy (07-matrix-example.yaml)
 - Demonstrates matrix strategy for parallel job execution
 - Shows environment-based deployments
 - Handles multiple deployment targets (development, staging, production)
+
+### 9. Docker Action (08-docker-action.yaml)
+- Custom Docker-based action
+- Shows Dockerfile integration
+- Demonstrates input parameter handling
+- Includes shell script entrypoint
+
+### 10. JavaScript Action (09-java-script-action.yaml)
+- Node.js-based custom action
+- Shows JavaScript action implementation
+- Demonstrates @actions/core usage
+- Handles inputs and outputs
 
 ## 🛠️ Additional Components
 
