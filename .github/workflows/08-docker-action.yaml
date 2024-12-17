@@ -1,0 +1,19 @@
+name: "08 - Docker Action Example"
+
+on: [push]
+
+jobs:
+  run-docker-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Executar Docker Action
+        uses: ./actions/docker-action
+        with:
+          name: "GitHub User"
+
+      - name: Finalizar workflow
+        run: echo "Workflow concluído com sucesso!"

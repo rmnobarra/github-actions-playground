@@ -31,6 +31,16 @@ This repository serves as a comprehensive demonstration of various GitHub Action
 - Uses GitHub context variables in Terraform
 - Generates dynamic files based on repository information
 
+### 6. Composite Action (06-composite-action.yaml)
+- Shows how to create and use composite actions
+- Demonstrates input/output handling
+- Includes shell script execution within composite actions
+
+### 7. Matrix Strategy (07-matrix-example.yaml)
+- Demonstrates matrix strategy for parallel job execution
+- Shows environment-based deployments
+- Handles multiple deployment targets (development, staging, production)
+
 ## 🛠️ Additional Components
 
 ### YAML to JSON Converter
