@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   deploy:
-    name: Deploy em ${{ matrix.environment }}
+    name: Deploy in ${{ matrix.environment }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,14 +12,15 @@ jobs:
         environment: [development, staging, production] # Lista de valores
 
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Exibir ambiente
-        run: echo "Deploy no ambiente: ${{ matrix.environment }}"
+      - name: Shows environment 
+        run: echo "Environment Deployment: ${{ matrix.environment }}"
 
-      - name: Executar script de deploy
+      - name: Execute deployment script
         run: |
-          echo "Iniciando deploy..."
-          echo "Ambiente selecionado: ${{ matrix.environment }}"
-          echo "Deploy concluído com sucesso!"
+          echo "Starts deployment..."
+          echo "Environment selected: ${{ matrix.environment }}"
+          echo "Deployment successful!"
+
