@@ -1,0 +1,30 @@
+name: "Run a docker container with a mounted volume"
+description: "Run a docker container with a mounted volume"
+
+inputs:
+  PATH_TO_MOUNT:
+    description: "Path to mount inside the Docker container"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check Runner
+      run: echo "🤖 OS runner is $(uname)"
+      shell: bash
+
+    - name: List files in the mounted path
+      run: |
+        echo "📂 Listing files in the path: ${{ inputs.PATH_TO_MOUNT }}"
+        ls -la ${{ inputs.PATH_TO_MOUNT }}
+      shell: bash
+      
+    - name: Run Docker container with mounted volume
+      run: |
+        echo "🐳 Running Docker container..."
+        docker run --rm -v ${{ inputs.PATH_TO_MOUNT }}:/workspace alpine sh -c "pwd; ls -la /workspace"
+      shell: bash
+
+branding:
+  icon: "terminal"
+  color: "orange"
