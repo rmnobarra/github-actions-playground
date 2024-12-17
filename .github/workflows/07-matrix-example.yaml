@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        environment: [development, staging, production] # Lista de valores
+        environment: [development, staging, production]
 
     steps:
       - name: Checkout
