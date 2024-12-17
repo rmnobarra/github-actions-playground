@@ -1,0 +1,30 @@
+name: 'My Composite Action'
+description: 'Uma ação composta para demonstrar seu funcionamento'
+inputs:
+  name:
+    description: 'O nome do usuário'
+    required: true
+outputs:
+  result:
+    description: 'Mensagem final'
+    value: ${{ steps.final-message.outputs.message }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Executar script
+      id: run-script
+      shell: bash
+      run: |
+        echo "Olá, ${{ inputs.name }}! Este é um script dentro da composite action."
+        chmod +x ${{ github.action_path }}/script.sh
+        ${{ github.action_path }}/script.sh ${{ inputs.name }}
+
+    - name: Mensagem final
+      id: final-message
+      shell: bash
+      run: |
+        echo "Tudo pronto, ${{ inputs.name }}!" 
+        echo "message=Operação completa com sucesso!" >> $GITHUB_OUTPUT

@@ -1,0 +1,18 @@
+name: 'Composite Action Demo'
+
+on: [push]
+
+jobs:
+  demo:
+    name: 'Exemplo Composite Action'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Usar Composite Action
+        uses: ./.github/actions/my-composite-action
+        with:
+          name: 'GitHub User'
+
+      - name: Exibir saída
+        run: |
+          echo "Workflow completo!"
