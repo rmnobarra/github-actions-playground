@@ -1,8 +1,8 @@
 name: "Reusable Workflow Example"
 
 on:
-  workflow_call:  # Permite que o workflow seja reutilizável
-    inputs:  # Define os inputs que podem ser passados para o workflow
+  workflow_call:  
+    inputs:  
       MESSAGE:
         description: "Message to display"
         required: true
@@ -16,7 +16,7 @@ on:
 jobs:
   display-message:
     name: "Display Message Job"
-    runs-on: ${{ inputs.RUNNER }}  # Permite configurar o runner via input
+    runs-on: ${{ inputs.RUNNER }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

@@ -1,4 +1,4 @@
-name: 04 - Usar Docker Mount Workspace Action
+name: 04 - Uses Docker Mount Workspace Action
 
 on:
   push:
@@ -14,8 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Gerar arquivo
-        run: echo "Este é um arquivo de teste gerado durante a execução do CI" > testfile.txt
+      - name: Generate file
+        run: echo "This is a file test generate during CI execution" > testfile.txt
 
       - name: Use Docker Mount Workspace Action
         uses: ./actions/run-docker-container-with-volume

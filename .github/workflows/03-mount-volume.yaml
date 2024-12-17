@@ -1,4 +1,4 @@
-name: 03 - Executar Docker e Montar GitHub Workspace
+name: 03 - Execute Docker and mount GitHub Workspace
 
 on:
   push:
@@ -13,13 +13,13 @@ jobs:
       - name: Checkout do código-fonte
         uses: actions/checkout@v3
 
-      - name: Gerar arquivo
-        run: echo "Este é um arquivo de teste gerado durante a execução do CI" > testfile.txt
+      - name: Generate file
+        run: echo "This is a file test generate during CI execution" > testfile.txt
 
-      - name: Executar contêiner Docker
+      - name: Run Docker container
         run: |
           docker run --rm -v "${{ github.workspace }}:/workspace" alpine /bin/sh -c "
-            echo 'Dentro do contêiner Docker';
+            echo 'Inside of Docker container';
             pwd;
             ls -la /workspace;
           "
