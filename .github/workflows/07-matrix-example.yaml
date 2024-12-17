@@ -1,40 +1,25 @@
-name: '07 - Strategy Matrix Example'
+name: "07 - Simple Matrix Example"
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  test-matrix:
-    name: Tests in multiple plataforms
-    runs-on: ${{ matrix.os }}
+  deploy:
+    name: Deploy em ${{ matrix.environment }}
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [16, 18]
-        exclude: 
-          - os: windows-latest
-            node-version: 18
-        include:
-          - os: ubuntu-latest
-            node-version: 20
-            extra: 'Extra test with Node.js 20'
+        environment: [development, staging, production] # Lista de valores
+
     steps:
-      - name: Checkout
+      - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Configure Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          architecture: x64
+      - name: Exibir ambiente
+        run: echo "Deploy no ambiente: ${{ matrix.environment }}"
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Execute tests
-        run: npm test
-
-      - name: Shows configurations
+      - name: Executar script de deploy
         run: |
-          echo "S.O: ${{ matrix.os }}"
-          echo "Node.js version: ${{ matrix.node-version }}"
-          echo "Extra: ${{ matrix.extra || 'Nenhum' }}"
+          echo "Iniciando deploy..."
+          echo "Ambiente selecionado: ${{ matrix.environment }}"
+          echo "Deploy concluído com sucesso!"
