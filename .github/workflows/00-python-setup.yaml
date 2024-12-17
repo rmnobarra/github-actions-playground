@@ -1,4 +1,4 @@
-name: 00 - Github Actions Playground - Python Example
+name: 00 - Python Example
 on:
   workflow_dispatch:  
 
