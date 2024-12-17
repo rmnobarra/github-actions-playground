@@ -1,0 +1,31 @@
+name: 01 - Linux Commands Example Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run_commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Print Operating System Info
+        run: |
+          echo "Este comando imprime informações sobre o sistema operacional."
+          uname -a
+          
+      - name: List Files in Current Directory
+        run: |
+          echo "Este comando lista todos os arquivos no diretório atual."
+          ls -l
+          
+      - name: Print Current Working Directory
+        run: |
+          echo "Este comando imprime o diretório de trabalho atual."
+          pwd
+          
+      - name: Print Environment Variables
+        run: |
+          echo "Este comando imprime as variáveis de ambiente."
+          printenv

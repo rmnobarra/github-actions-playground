@@ -1,0 +1,20 @@
+name: 04 - Executar Docker e Montar GitHub Workspace
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código-fonte
+        uses: actions/checkout@v3
+
+      - name: Gerar arquivo
+        run: echo "Este é um arquivo de teste gerado durante a execução do CI" > testfile.txt
+
+      - name: Executar contêiner Docker
+        run: docker run -v ${{ github.workspace }}:/workspace alpine /bin/sh -c "pwd; ls -la /workspace"

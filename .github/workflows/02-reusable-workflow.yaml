@@ -1,0 +1,16 @@
+name: 02 - Print a text Reusable
+on:
+  workflow_call:
+    inputs:
+      input-text:
+        required: true
+        type: string
+
+jobs:
+  show-input-text:
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Print text
+        id: print-text
+        run: |
+          echo "text provide was: ${{ inputs.input-text }}"

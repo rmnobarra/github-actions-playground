@@ -1,0 +1,23 @@
+name: 05 - Usar Docker Mount Workspace Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Gerar arquivo
+        run: echo "Este é um arquivo de teste gerado durante a execução do CI" > testfile.txt
+
+      - name: Use Docker Mount Workspace Action
+        uses: rmnobarra/github-actions-playground@main
+        with:
+          PATH_TO_MOUNT: ${{ github.workspace }}
