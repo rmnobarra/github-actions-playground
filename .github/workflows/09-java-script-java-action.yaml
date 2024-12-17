@@ -16,4 +16,5 @@ jobs:
           name: "GitHub User"
 
       - name: Mostrar mensagem gerada
-        run: echo "Saudação: ${{ steps.output.outputs.greeting }}"
+        run: |
+          echo "Greeting: ${{ steps.output.outputs.greeting }}"
