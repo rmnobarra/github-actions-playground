@@ -25,3 +25,4 @@ jobs:
 
       - name: List Files in the Repository
         run: ls -la
+        shell: bash
