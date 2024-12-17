@@ -1,4 +1,4 @@
-name: "03 - Main Workflow Using Reusable Workflow"
+name: "02 - Main Workflow Using Reusable Workflow"
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 jobs:
   call-reusable:
     name: "Call Reusable Workflow"
-    uses: ./.github/workflows/02-reusable-workflow.yaml
+    uses: ./.github/workflows/_reusable-workflow.yaml
     with:
       MESSAGE: "Hello from the Main Workflow! 🚀"
       RUNNER: "ubuntu-latest"

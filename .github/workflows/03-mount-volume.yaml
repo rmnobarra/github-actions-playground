@@ -1,4 +1,4 @@
-name: 04 - Executar Docker e Montar GitHub Workspace
+name: 03 - Executar Docker e Montar GitHub Workspace
 
 on:
   push:

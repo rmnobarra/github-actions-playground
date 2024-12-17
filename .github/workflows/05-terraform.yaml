@@ -1,4 +1,4 @@
-name: 06 - Terraform GitHub Actions Example
+name: 05 - Terraform GitHub Actions Example
 
 on: [push]
 

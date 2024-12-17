@@ -1,4 +1,4 @@
-name: "02 - Reusable Workflow Example"
+name: "Reusable Workflow Example"
 
 on:
   workflow_call:  # Permite que o workflow seja reutilizável
