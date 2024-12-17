@@ -1,4 +1,4 @@
-name: "Reusable Workflow Example"
+name: "02 - Reusable Workflow Example"
 
 on:
   workflow_call:  

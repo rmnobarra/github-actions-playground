@@ -1,4 +1,4 @@
-name: "02 - Main Workflow Using Reusable Workflow"
+name: "02.1 - Main Workflow Using Reusable Workflow"
 on:
   push:
     branches:

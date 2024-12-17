@@ -1,0 +1,19 @@
+name: "09 - JavaScript Action Demo"
+
+on: [push]
+
+jobs:
+  run-javascript-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Executar JavaScript Action
+        uses: ./actions/java-script-action
+        with:
+          name: "GitHub User"
+
+      - name: Mostrar mensagem gerada
+        run: echo "Saudação: ${{ steps.output.outputs.greeting }}"
