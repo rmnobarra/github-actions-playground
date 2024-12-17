@@ -1,12 +1,12 @@
 name: "Docker Action Example"
-description: "Uma ação simples baseada em Docker"
+description: "A simple action docker based"
 inputs:
   name:
-    description: "O nome do usuário"
+    description: "Username"
     required: true
-    default: "Mundo"
+    default: "World"
 runs:
   using: "docker"
-  image: "Dockerfile" # Referência ao Dockerfile no mesmo diretório
+  image: "Dockerfile"
   args:
     - "--name=${{ inputs.name }}"

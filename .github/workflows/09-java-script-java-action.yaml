@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Executar JavaScript Action
+      - name: Execute JavaScript Action
         id: generate-greeting
         uses: ./actions/java-script-action
         with:
           name: "GitHub User"
 
-      - name: Mostrar mensagem gerada
+      - name: Show message
         run: |
           echo "Greeting: ${{ steps.generate-greeting.outputs.greeting }}"

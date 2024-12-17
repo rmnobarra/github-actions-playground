@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Executar Docker Action
+      - name: Execute Docker Action
         uses: ./actions/docker-action
         with:
           name: "GitHub User"
 
-      - name: Finalizar workflow
-        run: echo "Workflow concluído com sucesso!"
+      - name: End of workflow
+        run: echo "Workflow completed successfully!"

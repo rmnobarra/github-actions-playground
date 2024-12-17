@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Exibe o valor do input
-echo "### Executando a Docker Action ###"
-echo "Olá, $INPUT_NAME! Esta é uma Action baseada em Docker."
+echo "### Running Docker Action ###"
+echo "Hello, $INPUT_NAME! This is a action docker based."
 
-# Adiciona um log adicional
-echo "Fim da execução!"
+echo "End of execution!"

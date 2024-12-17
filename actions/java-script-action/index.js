@@ -2,17 +2,15 @@ const core = require("@actions/core");
 
 function run() {
   try {
-    // Pega o input 'name'
+
     const name = core.getInput("name");
     
-    // Cria uma mensagem de saudação
-    const greeting = `Olá, ${name}! Bem-vindo ao GitHub Actions com JavaScript!`;
+    const greeting = `Olá, ${name}! Welcome to Github Actions with Javascript Action`;
     console.log(greeting);
 
-    // Define a mensagem como output
     core.setOutput("greeting", greeting);
   } catch (error) {
-    core.setFailed(`Ocorreu um erro: ${error.message}`);
+    core.setFailed(`An error was found: ${error.message}`);
   }
 }
 

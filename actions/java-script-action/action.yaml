@@ -1,13 +1,13 @@
 name: "JavaScript Action Example"
-description: "Uma action simples usando JavaScript"
+description: "An Javascript action"
 inputs:
   name:
-    description: "O nome do usuário"
+    description: "Username"
     required: true
-    default: "Mundo"
+    default: "World"
 outputs:
   greeting:
-    description: "Mensagem de saudação gerada"
+    description: "Greeting message"
 runs:
   using: "node20" # Usa Node.js 20
   main: "index.js" # Arquivo principal da action
