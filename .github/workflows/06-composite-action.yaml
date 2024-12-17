@@ -1,10 +1,10 @@
-name: 'Composite Action Demo'
+name: '06 - Composite Action Demo'
 
 on: [push]
 
 jobs:
   demo:
-    name: 'Exemplo Composite Action'
+    name: 'Composite Action Example'
     runs-on: ubuntu-latest
 
     steps:
@@ -12,11 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Usar Composite Action
+      - name: Uses Composite Action
         uses: ./actions/my-composite-action
         with:
           name: 'GitHub User'
 
-      - name: Exibir saída
+      - name: Show output
         run: |
-          echo "Workflow completo!"
+          echo "Workflow complete!"

@@ -1,0 +1,39 @@
+name: '07 - Strategy Matrix Example'
+
+on: [push, pull_request]
+
+jobs:
+  test-matrix:
+    name: Tests in multiple plataforms
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [14, 16, 18]
+        exclude: 
+          - os: windows-latest
+            node-version: 18
+        include:
+          - os: ubuntu-latest
+            node-version: 20
+            extra: 'Extra test with Node.js 20'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Execute tests
+        run: npm test
+
+      - name: Shows configurations
+        run: |
+          echo "S.O: ${{ matrix.os }}"
+          echo "Node.js version: ${{ matrix.node-version }}"
+          echo "Extra: ${{ matrix.extra || 'Nenhum' }}"
