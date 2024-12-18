@@ -997,6 +997,10 @@ jobs:
   - Use when your workflow needs supporting services (e.g., databases, message queues).
   - Example: Testing an application that interacts with PostgreSQL or Redis.
 
+## Reference
+- Examples: [Github Actions example repository](ttps://github.com/rmnobarra/github-actions-playground)
+- Book: [Learning GitHub Actions book](https://www.amazon.com/Learning-GitHub-Actions-Automation-Integration/dp/109813107X)
+
 ## conclusion
 
 GitHub Actions redefines automation by integrating it seamlessly into the GitHub ecosystem. With components like reusable workflows, robust security, and advanced integrations, it empowers developers to build, test, and deploy with unparalleled efficiency. Mastering GitHub Actions opens a world of automation possibilities that streamline development and operations.
