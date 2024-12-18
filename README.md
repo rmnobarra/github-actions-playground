@@ -79,12 +79,14 @@ This repository serves as a comprehensive demonstration of various GitHub Action
 
 ## 📝 Repository Structure
 
-├── .github/workflows/ # GitHub Actions workflow definitions
-├── actions/ # Custom GitHub Actions
+```
+├── .github/workflows/    # GitHub Actions workflow definitions
+├── actions/             # Custom GitHub Actions
 ├── files/
-│ ├── terraform/ # Terraform configurations
-│ └── convert.js # YAML to JSON converter
-└── README.md # This file
+│   ├── terraform/      # Terraform configurations
+│   └── convert.js      # YAML to JSON converter
+└── README.md           # This file
+```
 
 ## 🚦 Getting Started
 
