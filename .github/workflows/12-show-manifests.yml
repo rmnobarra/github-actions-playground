@@ -1,0 +1,25 @@
+name: "12 - Show K8s Manifests"
+on:
+  workflow_dispatch:
+
+jobs:
+  show-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show manifests in order
+        run: |
+          kinds=("ConfigMap" "Secret" "Deployment" "Service" "Ingress")
+          
+          for kind in "${kinds[@]}"; do
+            echo "=== $kind Manifests ==="
+            for file in $(find files/manifests -type f -name "*.yaml"); do
+              if grep -q "kind: $kind" "$file"; then
+                echo "File: $file"
+                echo "---"
+                cat "$file"
+                echo "---"
+              fi
+            done
+          done 
