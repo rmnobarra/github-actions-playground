@@ -1,0 +1,26 @@
+name: 'Deploy Action'
+description: 'Custom deploy action with hotfix support'
+inputs:
+  hotfix:
+    description: 'Whether this is a hotfix deployment'
+    required: true
+    default: 'false'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Regular Deploy
+      if: inputs.hotfix == 'false'
+      shell: bash
+      run: |
+        echo "Executing regular deployment step"
+        echo "This would normally contain your deployment commands"
+        echo "Deploy type: Regular Deploy"
+
+    - name: Hotfix Deploy
+      if: inputs.hotfix == 'true'
+      shell: bash
+      run: |
+        echo "Executing hotfix deployment step"
+        echo "This would normally contain your hotfix deployment commands"
+        echo "Deploy type: Hotfix Deploy" 
